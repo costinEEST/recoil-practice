@@ -1,21 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import Canvas from './Canvas'
-import {ChakraProvider} from '@chakra-ui/react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {ChakraProvider} from "@chakra-ui/react"
+import {StrictMode} from "react"
+import {createRoot} from "react-dom/client"
 
-ReactDOM.render(
-    <React.StrictMode>
-        <ChakraProvider>
-            <Router>
-                <Switch>
-                    <Route>
-                        <Canvas />
-                    </Route>
-                </Switch>
-            </Router>
-        </ChakraProvider>
-    </React.StrictMode>,
-    document.getElementById('root'),
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+
+import Canvas from "./Canvas"
+
+import "./index.css"
+
+createRoot(document.getElementById("root") as HTMLElement).render(
+  <StrictMode>
+    <ChakraProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<Canvas />} />
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
+  </StrictMode>,
 )

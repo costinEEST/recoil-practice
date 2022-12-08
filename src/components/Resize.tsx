@@ -1,49 +1,47 @@
-import {Resizable, ResizeHandle} from 'react-resizable'
-import {Handle} from './Handle'
-import {ElementStyle} from './Rectangle/Rectangle'
+import {Resizable} from "react-resizable"
 
-const handlePlacements: ResizeHandle[] = ['n', 's', 'e', 'w', 'ne', 'nw', 'se', 'sw']
+import {Handle} from "./Handle"
 
-type ResizeProps = {
-    selected: boolean
-    onResize: (style: ElementStyle) => void
-} & ElementStyle
+import type {ResizeHandle} from "react-resizable"
+import type {ResizeProps} from "../types"
+
+const handlePlacements: ResizeHandle[] = ["n", "s", "e", "w", "ne", "nw", "se", "sw"]
 
 export const Resize: React.FC<ResizeProps> = ({selected, children, position, size, onResize}) => {
-    return (
-        <Resizable
-            width={size.width}
-            height={size.height}
-            onResize={(_, {size, handle}) => {
-                let topDiff = 0
-                if (handle.includes('n')) {
-                    topDiff = size.height - size.height
-                }
+  return (
+    <Resizable
+      width={size.width}
+      height={size.height}
+      onResize={(_, {size, handle}) => {
+        let topDiff = 0
+        if (handle.includes("n")) {
+          topDiff = size.height - size.height
+        }
 
-                let leftDiff = 0
-                if (handle.includes('w')) {
-                    leftDiff = size.width - size.width
-                }
+        let leftDiff = 0
+        if (handle.includes("w")) {
+          leftDiff = size.width - size.width
+        }
 
-                onResize({
-                    size: {
-                        width: Math.round(size.width),
-                        height: Math.round(size.height),
-                    },
-                    position: {
-                        top: position.top + topDiff,
-                        left: position.left + leftDiff,
-                    },
-                })
-            }}
-            resizeHandles={handlePlacements}
-            handle={(placement) => (
-                <div>
-                    <Handle placement={placement} visible={selected} />
-                </div>
-            )}
-        >
-            <div>{children}</div>
-        </Resizable>
-    )
+        onResize({
+          size: {
+            width: Math.round(size.width),
+            height: Math.round(size.height),
+          },
+          position: {
+            top: position.top + topDiff,
+            left: position.left + leftDiff,
+          },
+        })
+      }}
+      resizeHandles={handlePlacements}
+      handle={(placement) => (
+        <div>
+          <Handle placement={placement} visible={selected} />
+        </div>
+      )}
+    >
+      <div>{children}</div>
+    </Resizable>
+  )
 }
