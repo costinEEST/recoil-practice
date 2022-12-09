@@ -4,6 +4,7 @@ import {createRoot} from "react-dom/client"
 import {RecoilRoot} from "recoil"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 
+import {Atoms} from "./components/Atoms"
 import Canvas from "./Canvas"
 
 import "./index.css"
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
         <BrowserRouter>
           <Routes>
             <Route path="*" element={<Canvas />} />
+            <Route path="/atoms" element={<Atoms />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
