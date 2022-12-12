@@ -1,12 +1,14 @@
+export type ChildrenProp = JSX.Element | JSX.Element[]
+
 export interface PageContainerProps {
   onClick: () => void
-  children: JSX.Element | JSX.Element[]
+  children: ChildrenProp
 }
 
 export type DragProps = {
   position: ElementStyle["position"]
   onDrag: (position: ElementStyle["position"]) => void
-  children: JSX.Element
+  children: ChildrenProp
 }
 
 export type ElementStyle = {
@@ -25,11 +27,11 @@ export type RectangleContainerProps = {
   position: ElementStyle["position"]
   size: ElementStyle["size"]
   onSelect: () => void
-  children: JSX.Element
+  children: ChildrenProp
 }
 
 export type ResizeProps = {
-  children: JSX.Element
+  children: ChildrenProp
   selected: boolean
   onResize: (style: ElementStyle) => void
 } & ElementStyle
