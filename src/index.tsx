@@ -16,7 +16,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
       <ChakraProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="*" element={<Canvas />} />
+            <Route path="/" element={<Canvas />} />
             <Route path="/atoms" element={<Atoms />} />
             <Route path="/selectors" element={<Selectors />} />
           </Routes>

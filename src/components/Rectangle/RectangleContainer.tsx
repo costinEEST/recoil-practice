@@ -1,8 +1,9 @@
 import {Box} from "@chakra-ui/react"
 
+import type {FC} from "react"
 import type {RectangleContainerProps} from "../../types"
 
-export const RectangleContainer: React.FC<RectangleContainerProps> = ({children, size, position, onSelect}) => {
+export const RectangleContainer: FC<RectangleContainerProps> = ({children, size, position, onSelect}) => {
   return (
     <Box
       position="absolute"
