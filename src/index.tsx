@@ -4,7 +4,7 @@ import {createRoot} from "react-dom/client"
 import {RecoilRoot} from "recoil"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 
-import Canvas from "./Canvas"
+import {Canvas} from "./Canvas"
 import {Atoms} from "./components/Atoms"
 import {Selectors} from "./components/Selectors"
 

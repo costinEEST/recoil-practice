@@ -1,3 +1,5 @@
+import type {ResizeHandle} from "react-resizable"
+
 export type ChildrenProp = JSX.Element | JSX.Element[]
 
 export type Element = {style: ElementStyle}
@@ -12,10 +14,21 @@ export interface PageContainerProps {
   children: ChildrenProp
 }
 
+export interface PropertyProps {
+  label: string
+  value: number
+  onChange: (value: number) => void
+}
+
 export type DragProps = {
   position: ElementStyle["position"]
   onDrag: (position: ElementStyle["position"]) => void
   children: ChildrenProp
+}
+
+export interface HandleProps {
+  placement: ResizeHandle
+  visible: boolean
 }
 
 export type Position = {
@@ -32,9 +45,12 @@ export type RectangleContainerProps = {
   children: ChildrenProp
 }
 
+export interface RectangleInnerProp {
+  selected: boolean
+}
+
 export interface RectangleProp {
-  element: Element
-  index: number
+  id: number
 }
 
 export type ResizeProps = {

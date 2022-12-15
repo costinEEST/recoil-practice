@@ -1,9 +1,8 @@
 import {DraggableCore} from "react-draggable"
 
-import type {FC} from "react"
 import type {DragProps} from "../types"
 
-export const Drag: FC<DragProps> = ({position, onDrag, children}) => {
+export const Drag = ({position, onDrag, children}: DragProps) => {
   return (
     <DraggableCore
       onDrag={(e: any) =>

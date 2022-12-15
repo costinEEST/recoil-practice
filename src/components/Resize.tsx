@@ -7,7 +7,7 @@ import type {ResizeProps} from "../types"
 
 const handlePlacements: ResizeHandle[] = ["n", "s", "e", "w", "ne", "nw", "se", "sw"]
 
-export const Resize: React.FC<ResizeProps> = ({selected, children, position, size, onResize}) => {
+export const Resize = ({selected, children, position, size, onResize}: ResizeProps) => {
   return (
     <Resizable
       width={size.width}

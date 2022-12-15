@@ -1,7 +1,10 @@
 import {Box} from "@chakra-ui/react"
+
 import {getBorderColor} from "../../util"
 
-export const RectangleInner = ({selected}: {selected: boolean}) => {
+import type {RectangleInnerProp} from "../../types"
+
+export const RectangleInner = ({selected}: RectangleInnerProp) => {
   return (
     <Box
       position="absolute"

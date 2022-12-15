@@ -1,11 +1,10 @@
 import {Box} from "@chakra-ui/react"
-import {ResizeHandle} from "react-resizable"
 
-import type {Position} from "../types"
+import type {HandleProps, Position} from "../types"
 
 import {getBorderColor} from "../util"
 
-export const Handle = ({placement, visible}: {placement: ResizeHandle; visible: boolean}) => {
+export const Handle = ({placement, visible}: HandleProps) => {
   const size = 10
 
   const position: Position = {}
